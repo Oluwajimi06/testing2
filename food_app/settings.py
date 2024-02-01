@@ -28,14 +28,14 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-SECRET_KEY = 'django-insecure-wlcklwo@b1t2knqi27vrcdnfi&(q&v_bju8m&-^o95e(ww!!2v'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 
 
 DEBUG = True
 # settings.py
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['*']
 
 
 PAYSTACK_SECRET_KEY = 'sk_test_402f276e72eda81696740efd5e5bd11b3901d401'
@@ -171,12 +171,12 @@ LOGOUT_REDIRECT_URL = '/'
 
 
 # Email settings with default values
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'oluwajimi.restoran@gmail.com'
-EMAIL_HOST_PASSWORD = 'wowetupewowzzzml'
+EMAIL_BACKEND = os.getenv('EMAIL_BACKEND', 'django.core.mail.backends.smtp.EmailBackend')
+EMAIL_HOST = os.getenv('EMAIL_HOST', 'localhost')
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS', 'True') == 'True'
+EMAIL_PORT = int(os.getenv('EMAIL_PORT', '587'))
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER', 'your_email@example.com')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD', 'your_email_password')
 
 
 
