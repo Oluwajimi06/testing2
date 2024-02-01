@@ -37,8 +37,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
-PAYSTACK_SECRET_KEY = 'sk_test_402f276e72eda81696740efd5e5bd11b3901d401'
+PAYSTACK_SECRET_KEY = os.getenv('PAYSTACK_SECRET_KEY')
 
 
 # PAYSTACK_WEBHOOK_URL = 'https://05a9-105-112-200-109.ngrok-free.app/paystack-webhook/'
@@ -112,10 +111,11 @@ WSGI_APPLICATION = 'food_app.wsgi.application'
 
 
 
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.sqlite3'),
+        'NAME': os.getenv('DB_NAME', BASE_DIR / 'db.sqlite3'),
     }
 }
 
