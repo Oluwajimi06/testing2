@@ -28,7 +28,7 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'django-insecure-wlcklwo@b1t2knqi27vrcdnfi&(q&v_bju8m&-^o95e(ww!!2v'
 
 
 
@@ -38,7 +38,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['.vercel.app']
 
 
-PAYSTACK_SECRET_KEY = os.getenv('PAYSTACK_SECRET_KEY')
+PAYSTACK_SECRET_KEY = 'sk_test_402f276e72eda81696740efd5e5bd11b3901d401'
 
 
 # PAYSTACK_WEBHOOK_URL = 'https://05a9-105-112-200-109.ngrok-free.app/paystack-webhook/'
