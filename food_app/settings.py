@@ -35,7 +35,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 # settings.py
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '41e3-102-89-22-125.ngrok-free.app']
+ALLOWED_HOSTS = ['.vercel.app']
 
 
 PAYSTACK_SECRET_KEY = os.getenv('PAYSTACK_SECRET_KEY')
